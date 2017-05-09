@@ -1,0 +1,19 @@
+{
+  "id": "101",
+  "engines": [
+    "yahoo.com",
+    "google.com",
+    "bing.com"
+  ],
+  "keywords": [
+    "forest",
+    "beach",
+    "sky scraper",
+    "leaders",
+    "scientists",
+    "rome",
+    "pokemon",
+    "yummy food"
+  ],
+  "dst": "resources/img"
+}
