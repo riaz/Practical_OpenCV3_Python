@@ -60,7 +60,7 @@ class Scraper():
                 self.id   = conf["id"] if "id" in conf else "101"
                 self.kwds = conf["keywords"] if "keywords" in conf else ["snakes"]
                 self.engs = conf["engines"] if "engines" in conf else ["yahoo.com"]
-
+                self.dst  = "../resources/" + conf["dst"] if "dst" in conf else "img"
                 self.urlList = self.prepareSeedUrl(self.engs,
                                                    self.kwds)
 

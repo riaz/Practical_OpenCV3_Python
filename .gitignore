@@ -1,0 +1,8 @@
+# Excluding IDE Specific Files
+ .idea
+
+#Excluding DS_Store
+.DS_Store
+
+#Excluding __pycache__
+__pycache__
