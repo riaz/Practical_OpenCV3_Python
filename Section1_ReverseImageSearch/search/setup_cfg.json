@@ -8,12 +8,12 @@
   "keywords": [
     "forest",
     "beach",
-    "sky scraper",
+    "hollywood",
     "leaders",
     "scientists",
     "rome",
     "pokemon",
-    "yummy food"
+    "food"
   ],
-  "dst": "resources/img"
+  "dst": "/img/"
 }
