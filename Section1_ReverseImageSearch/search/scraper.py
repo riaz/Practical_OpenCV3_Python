@@ -6,13 +6,25 @@ import importlib
 import requests
 from bs4 import BeautifulSoup
 
+"""
+ This is a driver function as well as the Scraper module for Canvas Image Search Engine.
+ To get started with the scraper , setup image sources eg: yahoo.com/google.com and topics of interest in setup_cfg.json
+ Once done, just run the scraper.py to do the scraping.
+
+"""
+
 
 class Scraper:
     def __init__(self, filename):
+        """
+
+        :param filename:
+        """
         if not utils.is_python3():  # Utils.is_python3():
             print("Please run using Python 3")
             sys.exit(0)
         else:
+            """
             try:
                 importlib.import_module("requests")
                 from bs4 import BeautifulSoup
@@ -20,14 +32,19 @@ class Scraper:
             except ImportError as e:
                 print(e.msg)
                 sys.exit(0)
-
+            """
         self.uniqUrls = set()
         self.load_config(filename)
 
         logging.debug("Scraper Successfully Initialized")
 
     def prepare_seed_url(self, engs, kwds):
+        """
 
+        :param engs:
+        :param kwds:
+        :return:
+        """
         res = list()
 
         # Please make sure that the urlMap is consistent with the engines in config, 1-1 mapping
@@ -54,6 +71,11 @@ class Scraper:
         return res
 
     def load_config(self, filename):
+        """
+
+        :param filename:
+        :return:
+        """
         try:
             with open(filename) as json_data:
                 conf = json.load(json_data)
@@ -62,7 +84,7 @@ class Scraper:
                 self.engs = conf["engines"] if "engines" in conf else ["yahoo.com"]
                 self.dst = "../resources/" + conf["dst"] if "dst" in conf else "img"
                 self.urlList = self.prepare_seed_url(self.engs,
-                                                   self.kwds)
+                                                     self.kwds)
 
         except Exception as e:
             print(e.msg)
@@ -70,6 +92,10 @@ class Scraper:
             sys.exit(0)
 
     def run(self):
+        """
+
+        :return:
+        """
         try:
             for url in self.urlList:
                 # print(url)
@@ -124,6 +150,7 @@ class Scraper:
 
 
 if __name__ == '__main__':
+
     cfile = "setup_cfg.json"
 
     scraper = Scraper(cfile)
