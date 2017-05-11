@@ -1,4 +1,4 @@
 def test_config():
-    print("Hello")
+    print("Test Config")
 
 
