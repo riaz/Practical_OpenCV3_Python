@@ -177,7 +177,10 @@ if __name__ == '__main__':
     Canvas Image Scraper Driver Program
     """
 
+    CON_MSG = "Scraping Images.......This process may take some time."
+
     conf = "setup_cfg.json"
 
+    print(CON_MSG)
     scraper = Scraper(conf)
     scraper.run()

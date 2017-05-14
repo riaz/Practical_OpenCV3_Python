@@ -15,8 +15,10 @@ if __name__ == '__main__':
             2.The name of the file where the index will be stored, defaults to index.pkl
     """
 
+    CON_MSG = "Indexing Images.......This process may take some time."
     image_src = IMAGE_SRC + sep + "img"
     index_dst = "index.pkl"
 
+    print(CON_MSG)
     # generate Index
     Indexer(image_src, index_dst)
