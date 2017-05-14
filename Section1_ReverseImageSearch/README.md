@@ -75,7 +75,7 @@ Run Instructions:
 
 3. python canvas_cli.py
 
-   ![alt text](https://raw.githubusercontent.com//riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/search/resources/readme/canvas_cli.png)
+   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/resources/readme/canvas_cli.png
 
 
 
