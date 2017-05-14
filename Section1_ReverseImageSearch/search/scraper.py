@@ -2,48 +2,63 @@ import sys
 import utils
 import logging
 import json
-import importlib
 import requests
+from os import sep
 from bs4 import BeautifulSoup
 
 """
  This is a driver function as well as the Scraper module for Canvas Image Search Engine.
- To get started with the scraper , setup image sources eg: yahoo.com/google.com and topics of interest in setup_cfg.json
- Once done, just run the scraper.py to do the scraping.
-
 """
 
 
 class Scraper:
+    """
+    1. This is the Image Scraper and used to source Images from the Web.
+    2. The Scraper is initialized from the setup_cfg.json file, you can edit the properties in this file to customize
+    the scraping.
+    3. To get started with the scraper , setup image sources eg: yahoo.com/google.com and topics of interest in
+    setup_cfg.json.
+    4. Once done, just run the scraper.py to do the scraping and all the images get stored into the "dst" location that you set in the config.
+    5. The scraper is designed to run incrementally and can e stopped by Keyboard Interrupt.
+
+    Note: Design and Implementation of the Scraper is not in the scope of the Course. You can index images
+    from your local file system without having to run the Scraper.
+
+    Hints: You can make a multi-threaded Scraper to be able to scrape for faster, sharing a single urlList (resource)
+    using a semaphore.
+    """
+
+    DEFAULT_ENGINE = "yahoo.com"
+    DEFAULT_TOPIC = "nature"
+    DEFAULT_DST = ".." + sep + "resources" + sep + "img"  # default destination for images
+    IMAGE_HOME = ".." + sep + "resources"
+
     def __init__(self, filename):
         """
+        Initializes the Scraper
 
-        :param filename:
+        :param filename: The path to setup_cfg.json file to initialize the scraper
         """
-        if not utils.is_python3():  # Utils.is_python3():
+        # Checking for python3 interpreter
+        if not utils.is_python3():
             print("Please run using Python 3")
             sys.exit(0)
-        else:
-            """
-            try:
-                importlib.import_module("requests")
-                from bs4 import BeautifulSoup
 
-            except ImportError as e:
-                print(e.msg)
-                sys.exit(0)
-            """
+        # a set of unique urls from where we scrape images
         self.uniqUrls = set()
-        self.load_config(filename)
+
+        # initializing scraper from config file
+        self.kwds, self.engs, self.dst, self.urlList = self.load_config(filename)
 
         logging.debug("Scraper Successfully Initialized")
 
     def prepare_seed_url(self, engs, kwds):
         """
+        Prepares the Seed Url from the list of engines and keywords
 
-        :param engs:
-        :param kwds:
-        :return:
+        :param engs: list of search engines
+        :param kwds: list of topics of interests
+        :return:  prepared list of seed urls based on engs and kwds
         """
         res = list()
 
@@ -66,25 +81,27 @@ class Scraper:
             logging.debug("Failed populating for a entry.")
 
         if len(res) == 0:
-            res.append("http://yahoo.com")  # We try to extract images from yahoo.com homepage, if its empty
+            # We try to extract images from yahoo.com homepage, if its empty
+            res.append(self.DEFAULT_ENGINE)
 
         return res
 
     def load_config(self, filename):
         """
-
+        Loads properties from the setup_cfg.json file, any new key added to this file must be handled appropriately.
         :param filename:
         :return:
         """
         try:
             with open(filename) as json_data:
                 conf = json.load(json_data)
-                self.id = conf["id"] if "id" in conf else "101"
-                self.kwds = conf["keywords"] if "keywords" in conf else ["snakes"]
-                self.engs = conf["engines"] if "engines" in conf else ["yahoo.com"]
-                self.dst = "../resources/" + conf["dst"] if "dst" in conf else "img"
-                self.urlList = self.prepare_seed_url(self.engs,
-                                                     self.kwds)
+                kwds = conf["keywords"] if "keywords" in conf else self.DEFAULT_TOPIC
+                engs = conf["engines"] if "engines" in conf else self.DEFAULT_ENGINE
+                dst = self.IMAGE_HOME + conf["dst"] if "dst" in conf else self.DEFAULT_DST
+
+                urlList = self.prepare_seed_url(engs,
+                                                kwds)
+            return kwds, engs, dst, urlList
 
         except Exception as e:
             print(e.msg)
@@ -93,22 +110,23 @@ class Scraper:
 
     def run(self):
         """
+        This will trigger the actual scrapping process after all the pro-processing is done.
+        This will run almost indefinitely, press "Ctrl + C" or KeyboardInterrupt to halt the Scraping process.
 
-        :return:
+        :return: None
         """
         try:
             for url in self.urlList:
-                # print(url)
-
                 try:
                     req = requests.get(url)
                 except Exception as e:
-
+                    # possible 404 , ignore url and continue
                     continue
 
                 soup = BeautifulSoup(req.content, "html.parser")
 
-                for link in soup.find_all('a'):  # hyperlinks
+                for link in soup.find_all('a'):
+                    # checking for hyperlinks
                     new_url = link.get('href')
 
                     if new_url not in self.uniqUrls:
@@ -131,27 +149,35 @@ class Scraper:
                         ext = link[link.rindex('.') + 1:]
 
                         if ext == 'jpg' or ext == 'png' or ext == 'gif':
-                            filename = link.strip('/').rsplit('/', 1)[-1]  # to get the correct file name
+                            # extracting the filename
+                            filename = link.strip(sep).rsplit(sep, 1)[-1]
 
                             try:
-                                image = requests.get(link).content  # use requests to get the content of the images
+                                # use requests to get the content of the images
+                                image = requests.get(link).content
                             except:
+                                # possible 404 , ignore url and continue
                                 continue
 
                             with open(self.dst + filename, 'wb') as f:
-                                f.write(image)  # write the image into a file
+                                # write the image into a file
+                                f.write(image)
 
                 # removing url from self.urlList
                 self.urlList.remove(url)
 
         except KeyboardInterrupt:
+            # When user presses Ctrl + C, to voluntarily stop the scraping process.
             print("User Stopped Scraping")
             sys.exit(0)
 
 
 if __name__ == '__main__':
+    """
+    Canvas Image Scraper Driver Program
+    """
 
-    cfile = "setup_cfg.json"
+    conf = "setup_cfg.json"
 
-    scraper = Scraper(cfile)
+    scraper = Scraper(conf)
     scraper.run()

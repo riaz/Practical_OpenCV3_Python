@@ -1,5 +1,4 @@
 {
-  "id": "101",
   "engines": [
     "yahoo.com",
     "google.com",
@@ -15,5 +14,5 @@
     "pokemon",
     "food"
   ],
-  "dst": "/img/"
+  "dst": "<enter absolute path where images will be stored>"
 }
