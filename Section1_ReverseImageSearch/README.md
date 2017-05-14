@@ -71,7 +71,7 @@ Run Instructions:
        
 2. python indexer.py
   
-   ![alt text](https://raw.githubusercontent.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/search/resources/readme/index.png)
+   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/resources/readme/index.png)
 
 3. python canvas_cli.py
 
