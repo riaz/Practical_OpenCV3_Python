@@ -1,0 +1,23 @@
+img.search{
+    height: 100px;
+    margin: 0 auto;
+}
+
+.input-group-addon{
+   background-color: #fff;
+   cursor: pointer;
+}
+
+.searchbox{
+    border-right: None;
+}
+
+.res{
+   padding:10px;
+}
+
+.result-img{
+    height: 300px !important;
+    width:  300px !important;
+}
+

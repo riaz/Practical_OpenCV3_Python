@@ -1,0 +1,45 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="col-md-12">
+    <br><br><br> <br><br><br> <br><br><br>
+    <div class="row">
+        <div class="col-md-4"><img class="queryImage" /></div>
+        <div class="col-md-4">
+            <p><img src="../static/img/Canvas.png" class="img search"></p>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+      <br>
+      <br>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="input-group igroup">
+                <input type="text" class="form-control input-lg searchbox" placeholder="Search">
+
+                <div class="input-group-addon">
+                    <i class="fa fa-camera" aria-hidden="true" onclick="$(this).parent().find('input[type=file]').click();"></i>
+                    <form id="upload" enctype="multipart/form-data">
+                    <input id="imgUpload" name="file" type="file" style="display:none" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+  </div>
+</div>
+
+<div id="results" class="row">
+
+</div>
+
+<br><br><br>
+
+{% endblock %}
+

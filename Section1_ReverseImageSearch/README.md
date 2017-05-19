@@ -1,7 +1,7 @@
 # Canvas - A Reverse Image Search Engine
 
 [![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser/master.svg)]()
-[![Download](https://img.shields.io/badge/Python3-3.6.1-brightgreen.svg) ](https://www.python.org/downloads)
+[![Download](https://img.shields.io/badge/Python-3.6.1-brightgreen.svg) ](https://www.python.org/downloads)
 [![Download](https://img.shields.io/badge/OpenCV-3.2.0_dev-brightgreen.svg) ](https://www.opencv.org/)
 [![Download](https://img.shields.io/badge/Numpy-1.12.1-brightgreen.svg) ](https://www.numpy.org)
 
@@ -73,11 +73,11 @@ Run Instructions:
        
 2. python indexer.py
   
-   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/resources/readme/index.png)
+   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/files/index.png)
 
 3. python canvas_cli.py
 
-   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/resources/readme/canvas_cli.png)
+   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/files/canvas_cli.png)
 
 
 
