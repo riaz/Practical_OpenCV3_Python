@@ -4,6 +4,7 @@
 [![Download](https://img.shields.io/badge/Python-3.6.1-brightgreen.svg) ](https://www.python.org/downloads)
 [![Download](https://img.shields.io/badge/OpenCV-3.2.0_dev-brightgreen.svg) ](https://www.opencv.org/)
 [![Download](https://img.shields.io/badge/Numpy-1.12.1-brightgreen.svg) ](https://www.numpy.org)
+[![Download](https://img.shields.io/badge/Browser-Chrome-brightgreen.svg) ](www.google.com/chrome)
 
 
 
@@ -79,7 +80,9 @@ Run Instructions:
 
    ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/files/canvas_cli.png)
 
-
+4. python canvas_app.py
+   
+   ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/Section1_ReverseImageSearch/files/canvas_app.png)
 
 [4] CONTACT US
 -------------------------------
