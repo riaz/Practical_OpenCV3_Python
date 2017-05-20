@@ -93,5 +93,5 @@ Run Instructions:
 
 [4] CONTACT US
 -------------------------------
-<author_email>
-<reviewer_email>
+Riaz Munshi - riaz.2012@gmail.com   [ Author ]
+Sai Ganesh  - saiganeshb@gmail.com  [ Reviewer ]
