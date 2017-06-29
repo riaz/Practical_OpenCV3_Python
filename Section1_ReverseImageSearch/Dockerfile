@@ -73,7 +73,6 @@ RUN ln -s /usr/local/lib/python3.4/site-packages/cv2.cpython-34m.so cv2.so
 #Installing Flask
 RUN pip install Flask
 
-
 # Working on virtualenv "cv"
 workon cv
 
