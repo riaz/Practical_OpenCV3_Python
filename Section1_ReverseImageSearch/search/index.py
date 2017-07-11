@@ -1,11 +1,11 @@
 from engine import Indexer
-from os import sep
+from os.path import join
 
 """
     This is a client program that is used to index the images that the scraper extracts to the directory that you set in setup_cfg.json
 """
 
-IMAGE_SRC = ".." + sep + "resources"
+IMAGE_SRC = join("..","resources")
 
 if __name__ == '__main__':
     """
@@ -16,9 +16,11 @@ if __name__ == '__main__':
     """
 
     CON_MSG = "Indexing Images.......This process may take some time."
-    image_src = IMAGE_SRC + sep + "img"
-    index_dst = "index.pkl"
+
+    image_src = join(IMAGE_SRC,"img")
+    index_dst = "pindex.pkl"
 
     print(CON_MSG)
+
     # generate Index
     Indexer(image_src, index_dst)

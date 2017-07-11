@@ -3,6 +3,7 @@ import utils
 import logging
 import json
 import requests
+from os.path import join
 from os import sep
 from bs4 import BeautifulSoup
 
@@ -29,9 +30,9 @@ class Scraper:
     """
 
     DEFAULT_ENGINE = "yahoo.com"
-    DEFAULT_TOPIC = "nature"
-    DEFAULT_DST = ".." + sep + "resources" + sep + "img"  # default destination for images
-    IMAGE_HOME = ".." + sep + "resources"
+    DEFAULT_TOPIC  = "nature"
+    DEFAULT_DST    = join("..", "resources", "img")  # default destination for images
+    IMAGE_HOME     = join("..", "resources")
 
     def __init__(self, filename):
         """
@@ -182,5 +183,6 @@ if __name__ == '__main__':
     conf = "setup_cfg.json"
 
     print(CON_MSG)
+
     scraper = Scraper(conf)
     scraper.run()

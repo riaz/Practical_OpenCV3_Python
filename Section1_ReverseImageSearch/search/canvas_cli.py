@@ -2,14 +2,14 @@ from canvas import Canvas
 
 if __name__ == '__main__':
     """
-    This is the driver program for the canvas_cli.
+    This is the canvas search engine command line program.
 
     TODO:
         canvas
 
             Canvas Revese Image Search Command Line Tool v0.1
 
-                     -i   <Path/to/images>   <index.kl>    Indexes the Images
+                     -i   <Path/to/images>   <index.pkl>    Indexes the Images
                      -s   <Path/to/Scape/Config>           Scrapes Image
                      <Any valid image uri>                 Path to a image url, could be remote/local
     """

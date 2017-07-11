@@ -3,8 +3,10 @@ import pickle
 from engine import RGB3DHistogram, Searcher
 
 """
-    This is the Canvas - Reverse Search Engine Command Line Interface
-    Check: canvas_app.py for a Web based interface built using Flask and Jinja.
+    This is the Main Canvas Class
+    Check:
+    canvas_cli.py for the command-line interface
+    canvas_app.py for a Web based interface built using Flask and Jinja.
 
 """
 
