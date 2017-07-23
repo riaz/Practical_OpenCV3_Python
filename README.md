@@ -40,7 +40,7 @@ search of some point of accuracy.
 
 Query Image
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query.jpg)
 
 
 Result
