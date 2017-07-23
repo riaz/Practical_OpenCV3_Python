@@ -96,5 +96,5 @@ which is very popular nowadays especially in VR world.
 
 [3] CONTACT US
 -------------------------------
-Riaz Munshi - riaz.2012@gmail.com   [ Author ]
-Sai Ganesh  - saiganeshb@gmail.com  [ Reviewer ]
+### Riaz Munshi - riaz.2012@gmail.com   [ Author ]
+### Sai Ganesh  - saiganeshb@gmail.com  [ Reviewer ]
