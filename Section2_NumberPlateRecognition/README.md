@@ -54,6 +54,21 @@ Clone the Project:
 >git clone http://github.com/riaz/Section2_NumberPlateRecognition
 
 
+Output:
+
+Number Plate Segmentation
+
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/tree/master/Section2_NumberPlateRecognition/resources/images/number_app_1.png)
+
+
+Number Plate Extraction
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/tree/master/Section2_NumberPlateRecognition/resources/images/number_app_2.png)
+
+
+Detection and Prediction
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/tree/master/Section2_NumberPlateRecognition/resources/images/number_app_3.png)
+
+
 
 [4] CONTACT US
 -------------------------------
