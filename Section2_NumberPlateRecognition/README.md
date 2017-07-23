@@ -1,4 +1,4 @@
-# Recee - Number Plate Recognition
+# Automatic Number Plate Recognition in Videos/Images
 
 [![Download](https://img.shields.io/badge/Python-3.6.1-brightgreen.svg) ](https://www.python.org/downloads)
 [![Download](https://img.shields.io/badge/OpenCV-3.2.0_dev-brightgreen.svg) ](https://www.opencv.org/)
@@ -8,6 +8,13 @@
 [1]  DESCRIPTION
 ------------------------------------------------------------------------------------------
 
+In this project you will learn how you can automatically Localize, Segment, Detect and Recognize Number Plates of Cars
+in an image or video Stream. The implementation of the project uses various concepts that we have learnt in the earlier sections.
+While, the implementation of the system is not State of the Art system and not meant for production use-case, but covers 
+the basics of building such systems in general. 
+
+This implementation assuems no ground truth for detecting the number plates, but we can improve accuracy by have knowledge of the 
+country and the font size used the plates and improve the accuracy.
 
 [2]  SETUP
 -----------------------------------------------------------------------------------------
