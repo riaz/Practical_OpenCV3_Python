@@ -40,12 +40,12 @@ search of some point of accuracy.
 
 Query Image
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query/index.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query.png)
 
 
 Result
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query/canvas_app.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/canvas_app.png)
 
 
 
@@ -62,17 +62,17 @@ predefined targets and also to be able to detect number plates, even though we w
 the SVM implementation works to detect number plates.
 Number Plate Segmentation
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query/number_app_1.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/number_app_1.png)
 
 
 Number Plate Extraction
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query/number_app_2.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/number_app_2.png)
 
 
 Detection and Prediction
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query/number_app_3.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/number_app_3.png)
 
 
 
@@ -91,7 +91,7 @@ accordingly. We could further extend this concept by paraphrasing the objects an
 with a beautiful prose that summarises these elements in a image and is converse to a Text-to- Imagery Storytelling
 which is very popular nowadays especially in VR world.
 
-![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/query/scene_app_1.png)
+![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/scene_app_1.png)
 
 
 [3] CONTACT US
