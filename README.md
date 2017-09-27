@@ -24,7 +24,22 @@ gesture tracking using 2D cameras etc.
 Understanding Volume 1 is crucial to get started with the Volume 2 , so it is expected to complete the entire
 Volume 1 along with the applications based on it.
 
-[2]  CONTENTS
+[2] ENVIRONMENT
+-----------------------------------------------------------------------------------------
+In order to run the examples you will need to setup OpenCV3  + Python3 + TensorFlow
+The codes in this repository has been tested on MacOSX as well as Ubuntu 16.04.
+
+To make it easier to setup the environment hassle-free, simply build the docker image to
+run and experiments with the notebook and the projects.
+
+1. Install Docker for the targer Host(If not already installed)
+   https://www.docker.com/get-docker
+
+2. Build a Docker image to run the examples, run:
+
+   docker run -it --rm -p 8888:8888  -v `pwd`:/src aop /bin/bash
+
+[3]  CONTENTS
 -----------------------------------------------------------------------------------------
 Lets now see the contents of each section
 
@@ -94,7 +109,7 @@ which is very popular nowadays especially in VR world.
 ![alt text](https://github.com/riaz/Practical_OpenCV3_Python/blob/master/images/scene_app_1.png)
 
 
-[3] CONTACT US
+[4] CONTACT US
 -------------------------------
 ### Riaz Munshi - riaz.2012@gmail.com   [ Author ]
 ### Sai Ganesh  - saiganeshb@gmail.com  [ Reviewer ]
