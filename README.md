@@ -35,10 +35,18 @@ run and experiments with the notebook and the projects.
 1. Install Docker for the targer Host(If not already installed)
    https://www.docker.com/get-docker
 
-2. Build a Docker image to run the examples, run:
+2. Cloning the Project Repo and Build/Run a Docker image to run the examples, run:
+   
+   ```
+   git clone git@github.com:riaz/Practical_OpenCV3_Python.git 
 
-   docker run -it --rm -p 8888:8888  -v `pwd`:/src aop /bin/bash
+   cd Practical_OpenCV3_Python
 
+   docker build -t pop . 
+
+   docker run -it --rm -p 8888:8888  -v `pwd`:/src pop /bin/bash
+
+   ```
 [3]  CONTENTS
 -----------------------------------------------------------------------------------------
 Lets now see the contents of each section
